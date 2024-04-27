@@ -64,7 +64,6 @@ The app should now be running on port 3000.
 
 
 ### Challenges we ran into
-Integration Complexity was the most challenging: Overcoming the technical challenges of integrating multiple blockchain protocols and APIs seamlessly into FundPoint's app flows required additional testing and debugging.
 
 
 ### Accomplishments that we're proud of
@@ -82,24 +81,15 @@ Integration Complexity was the most challenging: Overcoming the technical challe
 
 ### Useful links
 
-* https://ethglobal.com/events/scaling2024/home
-* https://ethglobal.com/events/scaling2024/prizes
-* https://docs.arbitrum.io/stylus/stylus-quickstart
-* https://docs.sign.global/developer-apis/index-1/npm-sdk
-* https://docs.morphl2.io/docs/build-on-morph/intro
-* https://github.com/boidushya/web3modal-gnosis/blob/master/configs/index.tsx
-* https://docs.lighthouse.storage/lighthouse-1
-* https://docs.saturn.tech/
-
 # Image gallery
 
 ## Home
 
 ![Home](./img/home.png)
 
-## About page / creating a new Schema ID for attestation
+## About page
 
-![About Schema](./img/about_schema.png)
+![About](./img/about.png)
 
 ## Creating a new fund request
 
@@ -120,18 +110,6 @@ Integration Complexity was the most challenging: Overcoming the technical challe
 ## Example Filecoin IPFS Upload
 
 ![Filecoin IPFS Upload](./img/filecoin_ipfs_upload.png)
-
-### Example Morph contract
-
-![Morph](./img/morph.png)
-
-### Example Arbitrum Stylus contract
-
-![Stylus](./img/stylus.png)
-
-### Example Gnosis contract
-
-![Gnosis](./img/gnosis.png)
 
 ## Verified
 
