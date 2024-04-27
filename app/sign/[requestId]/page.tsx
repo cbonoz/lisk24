@@ -136,7 +136,10 @@ export default function FundRequest({ params }: { params: Params }) {
                 // signatureData,
             }
 
-            const attestation = await createAttestation(signer, schemaEntry)
+            const attestation: any = await createAttestation(
+                signer,
+                schemaEntry
+            )
             // const attestation = { attestationId: '1234' }
             // await switchChain({ chainId })
 
@@ -145,7 +148,7 @@ export default function FundRequest({ params }: { params: Params }) {
                 abi: FUND_CONTRACT.abi,
                 address: requestId,
                 functionName: 'validate',
-                args: [attestation.attestationId],
+                args: [attestation.attestationId || ''],
             })
 
             console.log('signRequest validate', res, attestation)

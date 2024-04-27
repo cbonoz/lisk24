@@ -19,7 +19,7 @@ import { SchemaEntry } from './types'
 var id = crypto.randomBytes(32).toString('hex')
 const privateKey: any = `0x${id}`
 
-const SCHEMA_ID: string = process.env.NEXT_PUBLIC_SCHEMA_ID + ''
+export const SCHEMA_ID: string = process.env.NEXT_PUBLIC_SCHEMA_ID + ''
 
 const schemaItem = (name: string): { name: any; type: any } => ({
     name,
@@ -60,6 +60,9 @@ export const createSchema = async (signer?: any) => {
 // https://docs.sign.global/developer-apis/index/api
 // https://docs.sign.global/developer-apis/index-1/npm-sdk#off-chain-arweave-mode
 export const createAttestation = async (signer: any, data: SchemaEntry) => {
+    if (!SCHEMA_ID) {
+        return {}
+    }
     const client = getClient(signer)
     //create attestation
     const indexingValue = `${data.request}_${data.timestamp}`
