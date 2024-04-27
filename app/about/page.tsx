@@ -43,7 +43,7 @@ const About = () => {
                     </div>
                 ))}
 
-                <Button
+                {/* <Button
                     onClick={getSchemaId}
                     disabled={loading}
                     className="mt-3"
@@ -52,7 +52,7 @@ const About = () => {
                         <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
                     )}
                     Get Schema ID
-                </Button>
+                </Button> */}
 
                 {result && (
                     <div className="my-2">

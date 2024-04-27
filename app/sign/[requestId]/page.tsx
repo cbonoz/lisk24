@@ -32,7 +32,7 @@ import {
     useSwitchChain,
     useWriteContract,
 } from 'wagmi'
-import { createAttestation, getAttestation } from '@/lib/ethsign'
+import { SCHEMA_ID, createAttestation, getAttestation } from '@/lib/ethsign'
 
 const RESULT_KEYS = [
     'name',
@@ -87,7 +87,7 @@ export default function FundRequest({ params }: { params: Params }) {
             console.log('contractData', contractData)
             setData(contractData)
 
-            if (contractData.attestationId) {
+            if (contractData.attestationId && SCHEMA_ID) {
                 const res = await getAttestation(contractData.attestationId)
                 console.log('getAttestation', res)
             }
