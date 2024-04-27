@@ -6,7 +6,7 @@
 
 Mediated proof of fund requests managed by smart contracts with attestations of record backed by Sign Protocol.
 
-Live Demo url: https://fundpointlisk.vercel.app (supports Arbitrum Stylus, Gnossis Chiaddo, Morph (testnet))
+Live Demo url: https://fundpointlisk.vercel.app (deployed on lisk testnet)
 
 Demo video:
 
@@ -36,12 +36,6 @@ When the verification is complete, a blockchain event is also emitted with infor
 
 ### Technologies used
 
-**Sign Protocol**: Utilized for generating and verifying signatures to ensure the authenticity and integrity of attestations without revealing sensitive information. When balance verifications are completed, a hosted attestation is created alongside the verification process. Several different APIs were used. From the about page, a schema ID can be created; every verification gets a new schema emitted in the form of an attestation. Completed attestations can be reviewed by the owner and the recipient after the fund verification is completed on the sign protocol explorer.
-
-<a href="https://scan.sign.global/attestation/SPA_rJCPlP1-ZaL_LirRGFlb8" target="_blank">Example attestation for a proof of funds request</a>
-
-The attestation is created at time of fund verification and contains a hash of the user's signature. Every fund verification requires a successful attestation be created and this is currently created via the off chain sdk (Airweave).
-
 **Filecoin**: Used for secure file storage for additional material related to the fund request. When the other party visits the authenticated balance verification link, he or she can access the uploaded material related to the purpose of the upload. This is also secured with saturn and uses lighthouse web3 sdk underneath for both upload and download based on the cid. Created cids are saved to the smart contracts and are retrieved when the verification page is accessed. The cid is only revealed to the authorized parties (owner and recipient) for each smart contract / transaction.
 
 <a href="https://gateway.lighthouse.storage/ipfs/QmeSUzMZSmUnj56WkriWwHjWqtJyarFX41EkPdscrQusuy">Example uploaded document</a>
@@ -49,20 +43,6 @@ The attestation is created at time of fund verification and contains a hash of t
 ***Blockchains***
 
 FundPoint was tested on a few different blockchains with deployed contracts that support fund verification in each native currency. Depending on the use case, the event fired from the contract when verification is completed can be used to trigger separate blockchain-specific workflows.
-
-**Arbitrum**: Transactions on Arbitrum are confirmed significantly faster than on the Ethereum mainnet, typically within seconds. This is crucial for a fund verification app, where users on a stylus device would expect quick results without long wait times. Low fees also enable creating multiple requests for near zero cost, combined with being fully self-managing, can be a significant time and cost savings compared to human involvement for back and forth exchanges for doing fund verification/ownership.
-
-Example deployed and verified fund smart contract on Arbitrum Stylus: https://stylus-testnet-explorer.arbitrum.io/address/0x9189c7722C0B815cd3752d559aD10980E20e59B4/transactions#address-tabs.
-
-**Gnosis**: Gnosis Chain, like Arbitrum, offers lower transaction fees (gas) compared to the Ethereum mainnet.  Gnosis Chain offers optional privacy features through zk-SNARKs (Zero-Knowledge Succinct Non-interactive Argument of Knowledge). This allows for certain transactions to be verified on the blockchain without revealing all the details, potentially enhancing privacy for some fund verification processes. Additional permission control features could also be leveraged for contract access and verification. Gnosis was easy to get up and running and able to both query smart contracts as well as fetch them to support unlimited peer to peer fund verification requests.
-
-Example deployed and verified fund smart contract on Chiado: https://gnosis-chiado.blockscout.com/address/0xc7f359Ff414fb601b7fAF9D1EdB2742692ABe85C.
-
-**Morph**: Employed for interoperability and cross-chain transactions, enabling seamless connectivity between different blockchain networks to enhance the accessibility and usability of Fundpoint across diverse ecosystems. It was easy to adjust the platform to support the Morph network and the settlement times on the deployed smart contract on Morph were great (almost instant). Making tracking real time updates to the contract possible.
-
-Example deployed and verified fund smart contract on Morph testnet: https://explorer-testnet.morphl2.io/address/0x28adF41Af09720D5462aa48325365E10b91eC2E3
-
-Eth Mainnet is also supported though carries additional/higher fees. On the above fund verification explorer contracts, the first transaction represents the fund contract creation by the owner. The second transaction indicates a successful verification (done by a different address if specified). An emit is evented from the blockchain as well, `FundVerified` which contains the balance and signature attestation id.
 
 ### How to run
 
