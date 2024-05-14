@@ -155,15 +155,25 @@ export default function FundRequest({ params }: { params: Params }) {
     useEffect(() => {
         if (address) {
             fetchData()
+        } else {
+            setLoading(false)
         }
     }, [address])
 
     if (loading) {
-        return <div>Loading...</div>
+        return (
+            <div className="flex flex-col items-center justify-center mt-8">
+                Loading...
+            </div>
+        )
     }
 
     if (!address) {
-        return <div>Please connect your wallet</div>
+        return (
+            <div className="flex flex-col items-center justify-center mt-8">
+                Please connect your wallet to view contracts
+            </div>
+        )
     }
 
     const authorized = data && address === data.recipientAddress
@@ -179,9 +189,10 @@ export default function FundRequest({ params }: { params: Params }) {
                     This request has been validated!
                 </span>
             )
-        }
-        if (showSignRequest) {
+        } else if (showSignRequest) {
             return data?.name || 'Fund Request'
+        } else if (error) {
+            return 'Error accessing Fund Request'
         }
         return 'Fund Request'
     }
@@ -195,7 +206,7 @@ export default function FundRequest({ params }: { params: Params }) {
                 className="max-w-[1000px] p-4"
             >
                 {invalid && (
-                    <div>
+                    <div className="font-bold">
                         <p>
                             This contract may not exist or may be on another
                             network, double check your currently connected
@@ -205,7 +216,7 @@ export default function FundRequest({ params }: { params: Params }) {
                 )}
 
                 {!authorized && (
-                    <div>
+                    <div className="font-bold">
                         <p>Not authorized to sign this request</p>
                     </div>
                 )}
@@ -368,7 +379,9 @@ export default function FundRequest({ params }: { params: Params }) {
                     </div>
                 )}
 
-                {error && <div className="text-red-500">{error.message}</div>}
+                {error && (
+                    <div className="mt-2 text-red-500">{error.message}</div>
+                )}
             </BasicCard>
         </div>
     )
