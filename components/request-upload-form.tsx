@@ -313,7 +313,7 @@ function UploadForm() {
             )}
             {hasResult && (
                 <div className="pt-8">
-                    <Button onClick={() => setResult(null)}>
+                    <Button onClick={() => setResult(null)} variant="link">
                         {' '}
                         ← Create another request
                     </Button>
