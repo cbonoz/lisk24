@@ -108,6 +108,10 @@ The app should now be running on port 3000.
 
 ![Error](./img/error.png)
 
+## Access error (not designated recipient)
+
+![Error](./img/access.png)
+
 ## Example Filecoin IPFS Upload
 
 ![Filecoin IPFS Upload](./img/filecoin_ipfs_upload.png)
@@ -115,10 +119,6 @@ The app should now be running on port 3000.
 ## Verified
 
 ![Verified](./img/verified.png)
-
-## Attestation
-
-![Created attestation](./img/attestation.png)
 
 ## Smart Contract code sample
 
