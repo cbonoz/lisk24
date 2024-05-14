@@ -65,9 +65,9 @@ export const getMetadata = async (signer: any, address: string) => {
     }
 }
 
-export const validate = async (signer: any, address: string) => {
+export const validate = async (signer: any, address: string, signature: string) => {
     const contract = new ethers.Contract(address, FUND_CONTRACT.abi, signer)
-    const result = await contract.validate()
+    const result = await contract.validate(signature)
     console.log('result', result)
     return {
         creator: result[0],

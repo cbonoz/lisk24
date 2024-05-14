@@ -23,7 +23,7 @@ import { useEffect, useRef, useState } from 'react'
 import SignatureCanvas from 'react-signature-canvas'
 import { Address, Chain, createPublicClient, http } from 'viem'
 import { writeContract } from '@wagmi/core'
-import crypto from 'crypto'
+import crypto, { sign } from 'crypto'
 
 import {
     useAccount,
@@ -114,8 +114,13 @@ export default function FundRequest({ params }: { params: Params }) {
 
         let signature = ''
         if (ref?.current) {
-            const signatureData = (ref.current as any).toDataURL() || ''
-            console.log('signatureData', signatureData)
+            signature = (ref.current as any).toDataURL() || ''
+            console.log('signatureData', signature)
+        }
+
+        if (!signature) {
+            alert('Signature is required')
+            return
         }
 
         setSignLoading(true)
@@ -128,30 +133,14 @@ export default function FundRequest({ params }: { params: Params }) {
             .toString()
 
         try {
-            const schemaEntry: SchemaEntry = {
-                name: d.recipientName,
-                request: d.name,
-                timestamp: Date.now().toString(),
-                signature,
-                // signatureData,
-            }
-
-            const attestation: any = await createAttestation(
-                signer,
-                schemaEntry
-            )
-            // const attestation = { attestationId: '1234' }
-            // await switchChain({ chainId })
-
-            console.log('created attestation', attestation)
             const res = await writeContract(config, {
                 abi: FUND_CONTRACT.abi,
                 address: requestId,
                 functionName: 'validate',
-                args: [attestation.attestationId || ''],
+                args: [signature]
             })
 
-            console.log('signRequest validate', res, attestation)
+            console.log('signRequest validate', res, signature)
             await fetchData()
             alert(
                 'Request validated! Please wait a few moments for the blockchain to update and refresh the page.'
@@ -264,20 +253,18 @@ export default function FundRequest({ params }: { params: Params }) {
                             </div>
                         )}
                         {/* attentation explorer link */}
-                        {data?.attestationId && (
+                        {data?.signature && (
                             <div className="my-2">
-                                <Link
-                                    className="text-blue-500 hover:underline"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                    href={getAttestationUrl(data.attestationId)}
-                                >
-                                    View attestation
-                                </Link>
+                                {/* Copy signature */}
+                                <div className="my-2">
+                                    <div className="text-sm font-bold">
+                                        Signature
+                                    </div>
+                                    <div className="text-sm">
+                                        {data.signature}
+                                    </div>
                             </div>
-                        )}
-                    </div>
-                )}
+                    </div>)}
 
                 {showSignRequest && (
                     <div>

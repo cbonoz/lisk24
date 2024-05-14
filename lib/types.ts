@@ -17,7 +17,7 @@ export interface ContractMetadata {
     recipientAddress: string
     cid?: string // optional cid pointer to attachment/s
     validatedAt: number
-    attestationId: string
+    signature: string
     network: string
 }
 

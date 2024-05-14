@@ -14,7 +14,7 @@ contract FundContract {
         address recipientAddress;
         string cid; // optional cid pointer to attachment/s
         uint validatedAt;
-        string attestationId;
+        string signature;
     }
 
     // owner
@@ -23,7 +23,7 @@ contract FundContract {
     Metadata private metadata;
 
     // Event to log balance verification
-    event FundVerified(address verifier, uint256 balance, string attestationId);
+    event FundVerified(address verifier, uint256 balance, string signature);
 
     constructor(
         string memory _name,
@@ -56,7 +56,7 @@ contract FundContract {
         return owner;
     }
 
-    function validate(string memory _attestationId) public returns (Metadata memory) {
+    function validate(string memory _signature) public returns (Metadata memory) {
         // verify address
         // get balance of sender
         uint256 balance = address(msg.sender).balance;
@@ -72,9 +72,9 @@ contract FundContract {
         require(metadata.validatedAt == 0, "Balance already validated");
         // set validatedAt timestamp
         metadata.validatedAt = block.timestamp;
-        metadata.attestationId = _attestationId;
+        metadata.signature = _signature;
         // emit event
-        emit FundVerified(msg.sender, balance, _attestationId);
+        emit FundVerified(msg.sender, balance, _signature);
         return metadata;
     }
 
