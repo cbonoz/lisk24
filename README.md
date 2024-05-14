@@ -48,11 +48,7 @@ When the verification is complete, a blockchain event is also emitted with infor
 
 <a href="https://gateway.lighthouse.storage/ipfs/QmeSUzMZSmUnj56WkriWwHjWqtJyarFX41EkPdscrQusuy">Example uploaded document</a>
 
-***Blockchains***
-
-FundPoint was tested on a few different blockchains with deployed contracts that support fund verification in each native currency. Depending on the use case, the event fired from the contract when verification is completed can be used to trigger separate blockchain-specific workflows.
-
-This app is deployed and supports Lisk Sepolia and Ethereum mainnet.
+This app was deployed and supports Lisk Sepolia and Ethereum mainnet. Depending on the use case, the event fired from the contract when verification is completed can be used to trigger separate blockchain-specific workflows.
 
 ### How to run
 
