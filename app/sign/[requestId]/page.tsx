@@ -87,10 +87,10 @@ export default function FundRequest({ params }: { params: Params }) {
             console.log('contractData', contractData)
             setData(contractData)
 
-            if (contractData.attestationId && SCHEMA_ID) {
-                const res = await getAttestation(contractData.attestationId)
-                console.log('getAttestation', res)
-            }
+            // if (contractData.attestationId && SCHEMA_ID) {
+            //     const res = await getAttestation(contractData.attestationId)
+            //     console.log('getAttestation', res)
+            // }
         } catch (error) {
             console.log('error reading contract', error)
             setError(error)
@@ -137,7 +137,7 @@ export default function FundRequest({ params }: { params: Params }) {
                 abi: FUND_CONTRACT.abi,
                 address: requestId,
                 functionName: 'validate',
-                args: [signature]
+                args: [signature],
             })
 
             console.log('signRequest validate', res, signature)
@@ -263,8 +263,11 @@ export default function FundRequest({ params }: { params: Params }) {
                                     <div className="text-sm">
                                         {data.signature}
                                     </div>
+                                </div>
                             </div>
-                    </div>)}
+                        )}
+                    </div>
+                )}
 
                 {showSignRequest && (
                     <div>
