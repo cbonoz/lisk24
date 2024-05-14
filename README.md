@@ -70,22 +70,16 @@ The app should now be running on port 3000.
 
 3. Copy contents (includes ABI) to `metadata.tsx#FUND_CONTRACT`
 
-4. Rebuild web project
-
-### Challenges we ran into
+4. Rebuild web project. The app should now be using the updated contract code.
 
 
-### Accomplishments that we're proud of
-* User-Centric Design: Designing FundPoint with a focus on user experience and security has resulted in a platform that offers seamless and secure fund verification processes, enhancing trust and confidence among buyers, sellers, and realtors.
-* Blockchain Interoperability: Achieving interoperability between different blockchain networks and protocols showcases our commitment to fostering a connected and accessible decentralized ecosystem.
+### Potential future work
 
-### What's next for FundPoint
-
-1. Enhanced Smart Contract Functionality: Implementing advanced smart contract functionalities to automate and streamline fund verification processes further, reducing manual intervention and increasing efficiency.
+1. Enhanced Smart Contract Functionality: Implementing advanced smart contract functionalities to automate and streamline fund verification processes further, reducing manual evaluation / communication such as emailing.
 
 2. Expanded Blockchain Support: Adding support for additional blockchain networks and protocols to broaden FundPoint's reach and accessibility, catering to users across different blockchain ecosystems.
 
-3. Integration of Advanced Security Features: Integrating advanced security features such as zero-knowledge proofs and multi-factor authentication to enhance the security posture of FundPoint and protect user data and funds effectively.
+3. Integration of Advanced Security Features: Integrating advanced security features such as zero-knowledge proofs to further validate the viewer of a contract.
 
 
 ### Useful links
