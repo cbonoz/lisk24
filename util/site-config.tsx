@@ -7,22 +7,17 @@ export const config = {
         {
             title: 'What is FundPoint?',
             description:
-                'FundPoint is a tool that allows you to verify your balance without exposing your addresses or balance to the requester.',
+                'FundPoint allows you to verify your balance without exposing unnecessary information to the requester.',
         },
         {
             title: 'How does it work?',
             description:
-                'You upload a request for verification, the request is signed by the verifier, and the verifier verifies the request.',
-        },
-        {
-            title: 'Why should I use FundPoint?',
-            description:
-                'FundPoint allows you to verify your balance without exposing your addresses or balance to the requester.',
+                'FundPoint lets you create balance verification links. For each request, the recipient can verify the request by proving ownership over a satisfying wallet.',
         },
         {
             title: 'Disclaimer',
             description:
-                'Note FundPoint is currently a proof of concept prototype and as provided as-is without any guarantees. Use at your own risk.',
+                'Note FundPoint is currently a proof of concept prototype and as provided as-is without any guarantees. Use at your own discretion.',
         },
     ],
     steps: [
