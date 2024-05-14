@@ -18,6 +18,12 @@ With Fundpoint, you can prove or assert you have a certain balance on connected 
 
 Example of this process in real estate: <a href="https://www.investopedia.com/ask/answers/082316/how-do-mortgage-lenders-check-and-verify-bank-statements.asp#:~:text=A%20proof%20of%20deposit%20is,closing%20costs%20for%20a%20property." target="_blank"> Proof of funds</a>
 
+### Example signed verification request
+
+Contract: https://sepolia-blockscout.lisk.com/address/0x9189c7722C0B815cd3752d559aD10980E20e59B4
+
+Signature page: https://fundpointlisk.vercel.app/sign/0x9189c7722C0B815cd3752d559aD10980E20e59B4 (only viewable with designated recipient address).
+
 
 ### Example use case
 
@@ -100,9 +106,6 @@ The app should now be running on port 3000.
 
 ![Created](./img/created.png)
 
-## Verifying a fund request
-
-![Verify](./img/verify.png)
 
 ## Insufficient balance error
 
