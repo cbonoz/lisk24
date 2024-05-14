@@ -4,9 +4,9 @@
 
 ## FundPoint
 
-Mediated proof of fund requests managed by smart contracts with attestations of record backed by Sign Protocol.
+Mediated proof of fund requests managed by Lisk smart contracts with saved signatures of record.
 
-Live Demo url: https://fundpointlisk.vercel.app (deployed on lisk testnet)
+Live Demo url: https://fundpointlisk.vercel.app (deployed on Lisk Sepolia)
 
 Demo video:
 
