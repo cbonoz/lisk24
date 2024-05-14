@@ -1,5 +1,5 @@
 <p align='center'>
-    <img src='./public/logo.png' width=400 />
+    <img src='https://i.ibb.co/6m1MxJz/logo.png' width=400 />
 </p>
 
 ## FundPoint
@@ -19,7 +19,7 @@ With Fundpoint, you can prove or assert you have a certain balance on connected 
 Example of this process in real estate: <a href="https://www.investopedia.com/ask/answers/082316/how-do-mortgage-lenders-check-and-verify-bank-statements.asp#:~:text=A%20proof%20of%20deposit%20is,closing%20costs%20for%20a%20property." target="_blank"> Proof of funds</a>
 
 
-### How it works
+### Example use case
 
 * **Buyers:**
     * Securely connect their wallets, showing ownership over particular accounts.
@@ -43,6 +43,8 @@ When the verification is complete, a blockchain event is also emitted with infor
 ***Blockchains***
 
 FundPoint was tested on a few different blockchains with deployed contracts that support fund verification in each native currency. Depending on the use case, the event fired from the contract when verification is completed can be used to trigger separate blockchain-specific workflows.
+
+This app is deployed and supports Lisk Sepolia and Ethereum mainnet.
 
 ### How to run
 
