@@ -6,9 +6,11 @@
 
 Mediated proof of fund requests managed by Lisk smart contracts with saved signatures of record.
 
-Live Demo url: https://fundpointlisk.vercel.app (deployed on Lisk Sepolia)
+Going for the Real world applications and finance category of https://lisk.devpost.com/
 
-Demo video:
+Live Demo url (deployed with Lisk Sepolia): https://fundpointlisk.vercel.app
+
+Demo video (youtube ~3 minutes): https://youtu.be/Ay0YsobKPgE
 
 ### Inspiration
 
