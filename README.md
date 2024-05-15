@@ -10,7 +10,7 @@ Going for the Real world applications and finance category of https://lisk.devpo
 
 Live Demo url (deployed with Lisk Sepolia): https://fundpointlisk.vercel.app
 
-Demo video (youtube ~3 minutes): https://youtu.be/Ay0YsobKPgE
+Demo video (youtube ~3 minutes): https://youtu.be/G-mRl-ZpjXE
 
 ### Inspiration
 
